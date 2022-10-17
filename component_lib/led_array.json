@@ -1,0 +1,14 @@
+{
+    "target_display": "GUI",
+    "led_order": "horizontal",
+    "spacing": "50%",
+    "off_color": {"R": 0, "G": 0, "B": 0},
+    "on_color": {"R": 128, "G": 255, "B": 128},
+    "count": 8,
+    "template": "round",
+    "size": {"x": 50, "y": 50},
+    "logic": "led_array",
+    "type": "common_cathode",
+    "anodes": ["P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7"]
+}
+

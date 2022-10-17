@@ -1,0 +1,80 @@
+{
+	"board": "UNO-R3",
+	"LED": {
+		"placement": {
+			"type": "array",
+			"size": 1,
+			"distance": 1,
+			"orientation": "horizontal"
+		},
+		"elements": [
+			{
+				"position": "0",
+				"caption": "L1",
+				"type": "led-round-simple",
+				"color": "red",
+				"anode": "13",
+				"cathode": "GND"
+			},
+			{
+				"position": "1",
+				"caption": "L2",
+				"type": "led-round-simple",
+				"color": "red",
+				"anode": "12",
+				"cathode": "GND"
+			},
+			{
+				"position": "2",
+				"caption": "L3",
+				"type": "led-round-simple",
+				"color": "red",
+				"anode": "11",
+				"cathode": "GND"
+			},
+			{
+				"position": "3",
+				"caption": "L4",
+				"type": "led-round-simple",
+				"color": "red",
+				"anode": "10",
+				"cathode": "GND"
+			},
+			{
+				"position": "4",
+				"caption": "L5",
+				"type": "led-round-simple",
+				"color": "red",
+				"anode": "9",
+				"cathode": "GND"
+			},
+			{
+				"position": "5",
+				"caption": "L6",
+				"type": "led-round-simple",
+				"color": "red",
+				"anode": "8",
+				"cathode": "GND"
+			},
+			{
+				"position": "6",
+				"caption": "L7",
+				"type": "led-round-simple",
+				"color": "red",
+				"anode": "7",
+				"cathode": "GND"
+			},
+			{
+				"position": "7",
+				"caption": "L8",
+				"type": "led-round-simple",
+				"color": "red",
+				"anode": "6",
+				"cathode": "GND"
+			}
+		]
+	},
+	"CONSOLE": {
+		"protocol": "serial"
+	}
+}

@@ -1,0 +1,30 @@
+{
+    "board_name": "Arduino Uno",
+    "digital_pins": 14,
+    "analog_pins": 6,
+    "digital_io": [0,1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "analog_io": ["A0","A1","A2","A3","A4","A5"],
+    "pwm": [3,5,6,9,10,11],
+    "serial": {
+        "rx": 0,
+        "tx": 1
+    },
+    "i2c": {
+        "sda": "A4",
+        "scl": "A5"
+    },
+    "int": {
+        "INT0": 2,
+        "INT1": 3,
+    },
+    "spi": {
+        "sck": 13,
+        "miso": 12,
+        "mosi": 11,
+        "cs": 10
+    },
+    "display": {
+        "mode": "GUI"
+    }
+}
+

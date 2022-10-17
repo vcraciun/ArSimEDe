@@ -1,0 +1,7 @@
+{
+    "board": "unor3",
+    "component_lib": ["led_array"],
+    "connections": {"P0": 13, "P1": 12, "P2": 11, "P3": 10, "P4": 9, "P5": 8, "P6": 7, "P7": 6},
+    "logic_app": "led_array_app"
+}
+
