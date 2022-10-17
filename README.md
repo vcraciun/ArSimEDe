@@ -1,6 +1,7 @@
-# Arduino Simulator Environment
+# Architectural Simulator for Architectural Design
 
-This is a Simulator framework for generic CPU, and uses Arduino as a concrete instance
+This project aims to build complex simulations including logic, electrical and mechanical, for embedded designs.
+A first step would be the simulation of Arduino applications.
 
 The project is divided as follows:
 
