@@ -1,4 +1,4 @@
-# Architectural Simulator for Architectural Design
+# Architectural Simulator for Embedded Design
 
 This project aims to build complex simulations including logic, electrical and mechanical, for embedded designs.
 A first step would be the simulation of Arduino applications.
