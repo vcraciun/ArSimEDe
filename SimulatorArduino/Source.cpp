@@ -25,6 +25,8 @@ BOOL InitArduinoBoard(char* arduino_board_config, bool cui, bool gui)
     ARDUINO_APP app;
     HMODULE arduino_main;
 
+    system("cls");
+
     data.board_name = L"Arduino Uno";
     data.simulation_seconds = 100;
     data.digital_pins = 14;
@@ -74,7 +76,7 @@ int main(int argc, char* argv[])
     {
         printf("You must provide the path to the Arduino Board configuration json!!!\n");
         printf("EXAMPLE CMDLINE: \n");
-        printf("%S board.json\n", PathFindFileNameA(argv[0]));
+        printf("%s board.json\n", PathFindFileNameA(argv[0]));
         return 0;
     }
     else

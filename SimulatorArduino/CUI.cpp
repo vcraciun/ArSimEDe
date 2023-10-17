@@ -52,9 +52,9 @@ void CUIIOHook(int pin, int value, bool digital)
         SetConsoleCursorPosition(std, { xx + pin_pos_analog[pin].X, yy + pin_pos_analog[pin].Y });
 
     if (value)
-        SetConsoleTextAttribute(std, 0x04);
+        SetConsoleTextAttribute(std, 0x0C);
     else
-        SetConsoleTextAttribute(std, 0x0f);
+        SetConsoleTextAttribute(std, 0x07);
 
     printf("\xFE");
 

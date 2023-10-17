@@ -38,3 +38,5 @@ ArduinoApp/Release/
 Librarii/Release/
 SimulatorArduino/Release/
 *.exp
+Release
+*.log
