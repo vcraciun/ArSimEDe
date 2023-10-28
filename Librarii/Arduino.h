@@ -12,7 +12,7 @@ using namespace std;
 #define DLL_EXPORT __declspec(dllexport)
 #define DLL_IMPORT __declspec(dllimport)
 
-#ifdef IS_DLL
+#ifdef IS_ARDUINO_LIBRARY
 #define DLL_LINK DLL_EXPORT
 #else
 #define DLL_LINK DLL_IMPORT
@@ -25,7 +25,7 @@ typedef void (*F_IOHOOK)(int, int, bool);
 enum tipuri_pin {
 	TIP_INPUT,
 	TIP_OUTPUT,
-	TIP_UNDEFINED
+    TIP_UNDEFINED
 };
 
 enum semnale_iesire {
@@ -71,4 +71,4 @@ long long DLL_LINK micros();
 void DLL_LINK UseBoard(ARDUINO_BOARD* board, ARDUINO_APP* app);
 void DLL_LINK library_setup();
 void DLL_LINK library_loop();
-void DLL_LINK RegisterPIOHook(F_IOHOOK f_ptr);
+void DLL_LINK RegisterGraphicIOHook(F_IOHOOK f_ptr);

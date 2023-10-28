@@ -28,12 +28,30 @@ void analogWrite(int pin, int semnal_iesire)
 
 long long millis()
 {
-	long long millis;
+	static unsigned long long milis = 0;
+    unsigned long long diff;
 	SYSTEMTIME timp;
 	GetLocalTime(&timp);
-	millis = timp.wMilliseconds + timp.wSecond * 1000 + timp.wMinute * 60 * 1000 + timp.wHour * 3600 * 1000 + timp.wDay * 24 * 3600 * 1000;
-	Sleep(50);
-	return millis;
+
+    if (!milis)
+    {
+        milis = (unsigned long long)timp.wMilliseconds;
+        milis += (unsigned long long)timp.wSecond * 1000;
+        milis += (unsigned long long)timp.wMinute * 60 * 1000;
+        milis += (unsigned long long)timp.wHour * 3600 * 1000;
+        milis += (unsigned long long)timp.wDay * 24 * 3600 * 1000;
+        diff = 0;
+    }
+    else
+    {
+        diff = (unsigned long long)timp.wMilliseconds;
+        diff += (unsigned long long)timp.wSecond * 1000;
+        diff += (unsigned long long)timp.wMinute * 60 * 1000;
+        diff += (unsigned long long)timp.wHour * 3600 * 1000;
+        diff += (unsigned long long)timp.wDay * 24 * 3600 * 1000;
+        diff -= milis;
+    }
+	return diff;
 }
 
 long long micros()
@@ -45,7 +63,6 @@ long long micros()
 	micros = ft.dwHighDateTime;
 	micros <<= 32;
 	micros |= ft.dwLowDateTime;
-	Sleep(50);
 	return micros;
 }
 
@@ -76,7 +93,7 @@ void library_loop()
     loaded_app.f_loop();
 }
 
-void RegisterPIOHook(F_IOHOOK f_ptr)
+void RegisterGraphicIOHook(F_IOHOOK f_ptr)
 {
     io_hooks.push_back(f_ptr);
 }

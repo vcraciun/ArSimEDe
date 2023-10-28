@@ -1,5 +1,6 @@
 #include "Header.h"
 #include "CUI.h"
+#include "GUI.h"
 
 DWORD simulate_time;
 
@@ -28,7 +29,7 @@ BOOL InitArduinoBoard(char* arduino_board_config, bool cui, bool gui)
     system("cls");
 
     data.board_name = L"Arduino Uno";
-    data.simulation_seconds = 100;
+    data.simulation_seconds = 5;
     data.digital_pins = 14;
     data.analog_pins = 6;
     for (int i = 0; i < data.digital_pins; i++)
@@ -53,9 +54,15 @@ BOOL InitArduinoBoard(char* arduino_board_config, bool cui, bool gui)
 
     if (cui)
     {
-        DisplayBoard(30, 7);
-        RegisterPIOHook(CUIIOHook);
+        InitCUIBoard(30, 7);
+        RegisterGraphicIOHook(CUIIOHook);
     }
+    else
+        if (gui)
+        {
+            InitGUIBoard(30, 7);
+            RegisterGraphicIOHook(GUIIOHook);
+        }
 
     return TRUE;
 }
@@ -110,6 +117,9 @@ int main(int argc, char* argv[])
         UpdateTime(time);
         library_loop();
     }
+
+    if (gui)
+        FinishGUI();
 
     return 0;
 }

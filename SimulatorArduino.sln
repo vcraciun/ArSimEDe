@@ -4,10 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimulatorArduino", "SimulatorArduino\SimulatorArduino.vcxproj", "{81C2938C-F562-4B35-8631-BC34DE4EAE5E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E080FF50-9CB3-4832-A76C-FF672F2688F3} = {E080FF50-9CB3-4832-A76C-FF672F2688F3}
+		{FD1449DB-E3BC-4DA2-8A7C-9929D9DC15CF} = {FD1449DB-E3BC-4DA2-8A7C-9929D9DC15CF}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Librarii", "Librarii\Librarii.vcxproj", "{FD1449DB-E3BC-4DA2-8A7C-9929D9DC15CF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArduinoApp", "ArduinoApp\ArduinoApp.vcxproj", "{E080FF50-9CB3-4832-A76C-FF672F2688F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FD1449DB-E3BC-4DA2-8A7C-9929D9DC15CF} = {FD1449DB-E3BC-4DA2-8A7C-9929D9DC15CF}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

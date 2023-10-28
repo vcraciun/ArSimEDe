@@ -22,19 +22,19 @@ const char board[15][64] = {
     "   \xC8\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC  \n"
 };
 
-void DisplayBoard(SHORT x, SHORT y)
+void InitCUIBoard(SHORT x, SHORT y)
 {
     HANDLE std = GetStdHandle(STD_OUTPUT_HANDLE);    
     xx = x;
     yy = y;
     for (SHORT i = 0; i < 15; i++)
     {
-        SetConsoleCursorPosition(std, { x, y + i });
+        SetConsoleCursorPosition(std, { x, (SHORT)(y + i) });
         printf("%s", board[i]);
     }
 
     //power ON
-    SetConsoleCursorPosition(std, { xx + 47, yy + 5});
+    SetConsoleCursorPosition(std, { (SHORT)(xx + 47), (SHORT)(yy + 5)});
     SetConsoleTextAttribute(std, 0x0A);
     printf("\xFE\xFE");
     SetConsoleTextAttribute(std, 0x07);
@@ -47,9 +47,9 @@ void CUIIOHook(int pin, int value, bool digital)
     HANDLE std = GetStdHandle(STD_OUTPUT_HANDLE);
 
     if (digital)
-        SetConsoleCursorPosition(std, { xx + pin_pos_digital[pin].X, yy + pin_pos_digital[pin].Y });
+        SetConsoleCursorPosition(std, { (SHORT)(xx + pin_pos_digital[pin].X), (SHORT)(yy + pin_pos_digital[pin].Y) });
     else
-        SetConsoleCursorPosition(std, { xx + pin_pos_analog[pin].X, yy + pin_pos_analog[pin].Y });
+        SetConsoleCursorPosition(std, { (SHORT)(xx + pin_pos_analog[pin].X), (SHORT)(yy + pin_pos_analog[pin].Y) });
 
     if (value)
         SetConsoleTextAttribute(std, 0x0C);
