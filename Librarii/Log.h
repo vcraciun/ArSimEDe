@@ -13,6 +13,7 @@ public:
     static Log* GetInstance();
     void DestroyInstance();
     void DebugMsg(const char* format, ...);
+    void DebugMsgTime(const char* format, ...);
     void ChangeLogName(const wchar_t* log);
     void RemovePrevious();
 };

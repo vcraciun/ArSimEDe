@@ -201,13 +201,3 @@ void par_impar(int* leds, int count, int total_time)
             digitalWrite(leds[i], 0);    
     }
 }
-void loop()
-{
-    int leds1[4] = {13,12,11,10};
-    int leds2[1] = {9};
-    int leds3[1] = {8};
-    cycle_3(leds1, 4, 3000);
-    blink(leds2, 1, 100);
-    fade_out(leds3, 1, 300);
-}
-

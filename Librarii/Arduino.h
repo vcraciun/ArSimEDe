@@ -71,4 +71,5 @@ long long DLL_LINK micros();
 void DLL_LINK UseBoard(ARDUINO_BOARD* board, ARDUINO_APP* app);
 void DLL_LINK library_setup();
 void DLL_LINK library_loop();
+void DLL_LINK library_finish();
 void DLL_LINK RegisterGraphicIOHook(F_IOHOOK f_ptr);

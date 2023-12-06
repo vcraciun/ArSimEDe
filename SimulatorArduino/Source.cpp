@@ -117,7 +117,7 @@ int main(int argc, char* argv[])
         UpdateTime(time);
         library_loop();
     }
-
+    library_finish();
     if (gui)
         FinishGUI();
 
